@@ -1,0 +1,68 @@
+Create database Elite_Networks_Solutions
+
+USE Elite_Networks_Solutions
+
+Create table Cliente (
+ID_Cliente int identity (1,1) primary key,
+Nombre nvarchar (50)not null,
+Apellido nvarchar(50) not null,
+Cedula nvarchar (11) not null,
+telefono nvarchar (10) not null,
+Direccion nvarchar (50) not null,
+);
+
+Create table TipoDeServicio (
+ID_TipoDeServicio int identity (1,1) primary key,
+Regular nvarchar (50), 
+Normal nvarchar (50),
+Pro nvarchar (50),
+AltaGama nvarchar (50),
+
+);
+
+
+Create table Contrato (
+ID_Contrato int identity (1,1) primary key,
+Seis_Meses nvarchar (50),
+Doce_Meses nvarchar (50),
+Dieciocho_Meses nvarchar (50),
+VeintiCinco_Meses nvarchar (50),
+treinta_Meses nvarchar (50),
+);
+
+
+create table Usuarios(
+ID_Usuario int identity(1,1) primary key,
+Usuario nvarchar (100) not null,
+Contraseña nvarchar (50) not null,
+Nombre nvarchar (50) not null,
+Apellido nvarchar (50) not null,
+Tipo nvarchar (50) not null,
+);
+
+Create table  VentaServicio (
+ID_VentaServicio int identity(1,1) primary key,
+Fecha_Registro nvarchar (50),
+ID_Cliente int ,
+ID_SERVICIO INT ,
+ID_Contrato int ,
+Precio decimal ,
+Pago_Inicial decimal,
+Pago_Por_Mes decimal,
+
+);
+
+create table PagosOnline (
+ID_POnline int identity(1,1) primary key,
+
+Titular nvarchar (50),
+
+Email nvarchar (100),
+
+Numero_Targeta  nvarchar (50),
+
+Expiracion  nvarchar (50),
+
+
+Codigo_De_Verificacion int,
+);
